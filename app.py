@@ -2,9 +2,11 @@ import streamlit as st
 import google.generativeai as genai
 
 # Setup the AI Brain
-# This looks for the key you just saved in the Streamlit Settings
 genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
-model = genai.GenerativeModel('gemini-1.5-flash')
+
+# We changed 'gemini-1.5-flash' to 'models/gemini-1.5-flash'
+# This is more specific and usually fixes the "NotFound" error.
+model = genai.GenerativeModel('models/gemini-1.5-flash')
 st.set_page_config(page_title="RISHU AI", page_icon="🤖")
 
 # --- PASSWORD PROTECTION ---
