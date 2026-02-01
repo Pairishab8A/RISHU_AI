@@ -8,7 +8,7 @@ st.set_page_config(page_title="RISHU AI", page_icon="🤖")
 try:
     genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
     # We use the specific 'models/' prefix to avoid the NotFound error
-    model = genai.GenerativeModel('models/gemini-1.5-pro')
+    model = genai.GenerativeModel('models/gemini-1.5-flash')
 except Exception as e:
     st.error("RISHU is having trouble connecting to his brain. Check your API Key in Secrets.")
 
